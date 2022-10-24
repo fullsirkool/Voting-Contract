@@ -26,6 +26,10 @@ contract Voting {
         }
     }
 
+    function getCandidates() external view returns (Candidate[] memory){
+        return candidates;
+    }
+
     function grantVotingPermission(address voter) external {
         require(msg.sender == creator);
         require(!voters[voter].voted);
